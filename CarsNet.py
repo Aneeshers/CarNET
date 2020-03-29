@@ -15,11 +15,16 @@ import json
 from matplotlib.ticker import FormatStrFormatter
 import os
 import cv2
-
+import argparse
+from pprint import pprint
+parser = argparse.ArgumentParser()
+parser.add_argument("t", type=str, help= 'specify a car type; type none if you do not have one')
+args = parser.parse_args()
+type = args.t
+print(type + ' Car will be now searched for')
 model = models.resnet34(pretrained=True)
 num_ftrs = model.fc.in_features
 model.fc = nn.Linear(num_ftrs, 196)
-type = 'Coupe'
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.SGD(model.parameters(), lr=0.01, momentum=0.9)
 lrscheduler = optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='max', patience=3, threshold = 0.9)
@@ -98,19 +103,24 @@ classes, c_to_idx = find_classes("car_data/train")
 model_path = 'my_checkpoint1.pth'
 classes_detect = []
 count = 0
+frame_Car = {}
 for d in [d for d in os.listdir("Video/")]:
     count= count + 1
     img_path = "Video/" + d
     
     if (img_path != 'Video/.DS_Store'):
-        if (count < 20):
+        if (count < 500):
             conf1, predicted1 = predict(img_path, model_path, topk=5)
-            classes_detect.append(predicted1[0])         
+            classes_detect.append(predicted1[0])
+            frame_Car[count]= {}
+            frame_Car[count]['file'] = img_path
+            frame_Car[count]['ID'] = predicted1[0]
+
+            
     print(img_path)
     print(count)
     print(classes[(most_frequent(classes_detect))])
-    
-
+pprint(frame_Car)
 #Sedan
 #SUV
 #Coupe
@@ -120,10 +130,32 @@ for d in [d for d in os.listdir("Video/")]:
 #Wagon
 #Hatchback
 #Minivan
-
+img_file_arr = []
+img_arr=[]
 predicted_car = classes[(most_frequent(classes_detect))]
-if (type in predicted_car):
-    print('Found type: ' + type + '   ')
-    print(predicted_car)
+predicted_class = most_frequent(classes_detect)
+for i in frame_Car.values():
+    if(i['ID'] == predicted_class):
+        img_file_arr.append([i['file']])
+if (type != 'none'):
+    if (type in predicted_car):
+        print('Found type: ' + type + '   ')
+        print(predicted_car)
+    else:
+        print('Did not find a ' + type + ', but found ' + ' ' + predicted_car)
 else:
-    print('Did not find a ' + type + ', but found ' + ' ' + predicted_car)
+    print('found ' + predicted_car)
+str1 = ""
+
+for i in range(len(img_file_arr)):
+    file = str1.join(img_file_arr[i])
+    img = cv2.imread(file)
+    height, width, layers = img.shape
+    size = (width,height)
+    img_arr.append(img)
+fourcc = cv2.VideoWriter_fourcc(*'MP4V')
+
+out = cv2.VideoWriter('project.mp4',fourcc, 3, size)
+for i in range(len(img_arr)):
+    out.write(img_arr[i])
+out.release()
