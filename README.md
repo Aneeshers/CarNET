@@ -19,5 +19,5 @@
 <p>Go to the read mes in both folders and download it.</p>
 <h2 id="run">Run</h2>
 <pre><code>cd CarsNET
-python CarsNET.py
+python CarsNET.py Coupe (supports Sedan, SUV, Coupe, Convertible, Cab, Van, Wagon, Hatchback, Minivan)
 </code></pre>
