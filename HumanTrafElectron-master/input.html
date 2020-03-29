@@ -1,0 +1,59 @@
+<html lang="en">
+<meta charset="UTF-8">
+
+<link rel='stylesheet' href='navbar.css'>
+<link rel='stylesheet' href='input.css'>
+<iframe id="inputframe" src="input.html" style="display:none"></iframe>
+
+<style media="screen">
+</style>
+<body>
+    <div class="navbar">
+        <a href="mainWindow.html">Home</a>
+        <a href="mainWindow.html">Import</a>
+        <a href="mainWindow.html">Inbox</a>
+        <a href="mainWindow.html">User Options</a>
+    </div>
+
+    <div id='container'>
+        <div id='left'>
+            <label for='file_button' id='file_button_label'>
+                Choose Video File<input type='file' id='file_button'>
+            </label>
+            <span id='no_file'>No file chosen, yet</span>
+            <div id='video_preview'>
+                <video id="video" autoplay>
+                    <source id='mp4Source' src="video1.mp4" type=video/mp4 />
+                </video>
+            </div>
+        </div>
+        <div id='right'>
+            <div class="box1">
+            </div>
+
+            <fieldset id='request_footage_form'>
+                <legend id='legend'>Request Footage</legend>
+                <label class="label"> Type:</label>
+                <input id='car_type' type="text" class="form-control" placeholder="Sedan(Example)">
+
+
+                <label class="label">Car Model:</label>
+                <input id='car_model' type="text" class="form-control" placeholder='Honda Civic'>
+
+                <label class="label">Address:</label>
+                <input id='address' type="text" class="form-control" placeholder='42 Legends Way'>
+
+                <label class="label">Radius:</label>
+                <input id="radius" type="text" class="form-control" placeholder='10 Miles'>
+
+                <button id="submitRequests" type="button" class="btn">Submit Request</button>
+                <span id="request-text"></span>
+            </fieldset>
+        </div>
+    </div>
+
+    <script>
+        require('./input.js');
+    </script>
+</body>
+</html>

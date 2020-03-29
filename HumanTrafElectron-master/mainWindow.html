@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.css' rel='stylesheet' />
+    <script src="https://www.gstatic.com/firebasejs/7.13.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-firestore.js"></script>
+    <link href='mainWindow.css' rel='stylesheet' />
+    <link href= 'map.css' rel="stylesheet"/>
+    <link href= 'navbar.css' rel="stylesheet"/>
+</head>
+<body>
+<div class="navbar">
+    <a href="mainWindow.html">Home</a>
+    <a href="input.html">Import</a>
+    <a href="mainWindow.html">Inbox</a>
+    <a href="mainWindow.html">User Options</a>
+    <button id='logout' onclick="logginOut()">Logout</button>
+    <script>function logginOut() {
+        window.location.href='userAuth.html'
+    }</script>
+</div>
+<div id='container'>
+    <div id='map'></div>
+    <script>
+        require('./map.js')
+    </script>
+    <div id='active_requests_container'>
+        <div id='active_requests_title'>Active Requests</div>
+        <a href="outputWindow.html">Request 1</a>
+        <a href="mainWindow.html">Request 2</a>
+        <a href="mainWindow.html">Request 3</a>
+        <a href="mainWindow.html">Request 4</a>
+    </div>
+</div>
+
+
+
+
+
+<script>
+    require('./userAuth.js');
+</script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href='outputWindow.css' rel='stylesheet' />
+    <link href='navbar.css' rel='stylesheet'/>
+    <script type="text/javascript" src="output.js"></script>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="mainWindow.html">Home</a>
+        <a href="outputWindow.html">Import</a>
+        <a href="mainWindow.html">Inbox</a>
+        <a href="mainWindow.html">User Options</a>
+        <button id='logout' onclick='logOut()'>Logout</button>
+    </div>
+    
+    <div id='container'>
+        <div id="video_stuff">
+            <div id="videowrapper">
+                <!--width="720" height="540"-->
+                <video id="video" poster="thumbnail.jpg" controls>
+                    <source id='mp4Source' src="video1.mp4" type=video/mp4 />
+                </video>
+            </div>
+    
+            <button class="button" onclick="previousVideo()">Previous</button>
+            <button class="button" onclick="nextVideo()">Next</button>
+    
+            <div id="statistics">
+                <div id="accuracy"></div>
+                <div id="model"></div>
+                <div id="year"></div>
+                <div id="make"></div>
+                <div id="color"></div>
+            </div>
+        </div>
+        <div id="license_plate">
+            <div id="license_image">
+                <img src="test1.jpg" id='img'/>
+            </div>
+            <div id="license_number">License Plate:</div>
+        </div>
+    </div>
+</body>
+</html>

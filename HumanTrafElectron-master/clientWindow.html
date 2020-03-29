@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href='clientWindow.css' rel='stylesheet' />
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+</head>
+<body>
+
+    <h2>HTML Table</h2>
+    <div id='rows'>
+    <table id="clientInbox">
+        <tr>
+            <th>Agency</th>
+            <th>Date</th>
+            <th>Time Frame</th>
+            <th>Upload</th>
+        </tr>
+
+    </table>
+    </div>
+    <script>
+        require('./clientWindow.js')
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+.navbar {
+    height: 50px;
+    overflow: hidden;
+    background-color: rgb(51,51,51);
+}
+
+.navbar a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+#logout {
+    float: right;
+    background-color: rgb(51,51,51);
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    width: 100px;
+    height: 100%;
+    cursor: pointer;
+}
+
+#account_type {
+    padding: 14px 16px;
+    float: right;
+    font-size: 17px;
+    text-decoration: none;
+    text-align: center;
+    color: #f2f2f2;
+}

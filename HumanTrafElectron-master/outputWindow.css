@@ -1,0 +1,78 @@
+#videowrapper {
+    height: 50%;
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(100,100,100);
+    font-family: sans-serif;
+}
+
+#video_stuff {
+    padding-left: 50px;
+    padding-top: 50px;
+    margin-right: 25px;
+    width: 50%;
+    
+    height: calc(100% - 100px);
+}
+
+#container {
+    display: flex;
+}
+
+.button {
+    background-color: rgb(120,120,120);
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    font-size: 17px;
+    width: 50%
+    
+}
+
+    .button:hover {
+        background-color: #f2f2f2;
+        color: black;
+    }
+
+#video {
+    float: left;
+    width: 100%;
+    height: 100%;
+}
+
+#statistics {
+    width: 100%;
+    height: 40%;
+    padding-top: 10%;
+    text-align: center;
+}
+#license_plate {
+    margin-left: 25px;;
+    margin-top: 50px;
+    margin-right: 50px;
+    width: 50%;
+}
+
+#license_image {
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+#img {
+    width: 100%;
+}
+
+#license_number {
+    text-align: center;
+    font-size: x-large;
+
+}

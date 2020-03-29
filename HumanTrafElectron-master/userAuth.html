@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Login</title>
+    <link href="userAuth.css" rel="stylesheet">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.9.0/mapbox-gl.css" rel="stylesheet" />
+    <script src="https://www.gstatic.com/firebasejs/7.13.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.1/firebase-firestore.js"></script>
+</head>
+<body>
+
+<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.min.js"></script>
+<link
+        rel="stylesheet"
+        href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.2/mapbox-gl-geocoder.css"
+        type="text/css"
+/>
+<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>
+
+
+
+
+
+
+
+<fieldset id='login'>
+    <legend style='color: white'>Authentication</legend>
+    <label id='user_label' for="user">Enter username</label><br>
+    <input type="text" class='form-control' id="user" name="user"><br>
+    <label for="password" id="pass_label">Enter password</label><br>
+    <input type="password" class='form-control' id="password" name="password"><br>
+    <label id='organization_label' for='organization'>Organization Name</label>
+    <input type="text" class='form-control' id='organization' name='organization'>
+    <label id='address_label' for="geocoder">Organization Address</label>
+    <div id="map"></div>
+    <div id="geocoder" class="geocoder"></div>
+
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1Ijoicm9oYW5nIiwiYSI6ImNqdGM1eThxcjB0OHU0NHA0NnE2ZHRsa2UifQ.MV8JZhwT4IeduQPcy2zSAg';
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: [-79.4512, 43.6568],
+            zoom: 13
+        });
+
+        var geocoder = new MapboxGeocoder({
+            accessToken: mapboxgl.accessToken,
+            mapboxgl: mapboxgl
+        });
+
+
+        document.getElementById('geocoder').appendChild(geocoder.onAdd(map));
+        geocoder.on('result', function(results) {
+            address = results['result']['center'];
+            console.log(address);
+        });
+    </script>
+
+    <input type="checkbox" class="form-check-input" id="checkBox" onclick="myFunction()">
+    <label id="check" class="form-check-label" for="checkBox">Law Enforcement</label><br>
+    <button id="signIn" class="btn">Sign In</button>
+    <button id="signUp" class="btn">Sign Up</button>
+</fieldset>
+
+
+
+<script src="main.js"></script>
+<script src="./userAuth.js"></script>
+<script>
+    require('./userAuth.js')
+    require("firebase/firestore");
+</script>
+</body>
+</html>

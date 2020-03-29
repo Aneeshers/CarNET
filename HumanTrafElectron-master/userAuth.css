@@ -1,0 +1,93 @@
+body {
+    /* margin: 0; */
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(100,100,100);
+    font-family: sans-serif;
+    font-size: large;
+}
+#login {
+    margin-left: 5%;
+    margin-top: 5%;
+    margin-right: 5%;
+}
+
+#user_label, #pass_label, #check, #organization_label, #address_label {
+    margin-top: 5px;
+    color: #f2f2f2;
+    display: inline-block;
+    margin-bottom: .5rem;
+}
+
+.field{
+    color: #f2f2f2;
+    margin-right: -5%;
+}
+
+.form-control {
+    display: block;
+    width: 95%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+#checkbox{
+    margin-left: 100px;
+}
+
+.btn{
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    display: inline-block;
+    font-weight: 400;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    padding: 10px .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .25rem;
+    /* margin-left: 10%; */
+    width: 100px;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.form-check-input {
+    margin-top: .3rem;
+}
+
+.form-check-label {
+    margin-bottom: 0;
+}
+
+#nonLawEnforcement{
+    display: none;
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 10%;
+}
+
+
+.geocoder {
+     width: 100%;
+     top: 10px;
+     height: 50px;
+ }
+.mapboxgl-ctrl-geocoder {
+    min-width: 100%;
+}
+#map {
+    margin-top: 75px;
+    display: none;
+}
+
