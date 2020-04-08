@@ -4,6 +4,8 @@
 ---
 # Welcome to CarNET
 *A machine learning tool to help organizations and law enforcement collaborate to track malicious vehicles from only the make and model of the vehicle*
+
+![](https://github.com/Aneeshers/CarNET/blob/master/CarNEt.png)
 ## The Problem
 Often times, when someone reports a malicious activity (such as a suspicious car) they don't have enough time to take a high quality picture of the license plate. However, many can remember what type of car they saw, but it's very cumbersome and tedious for law enforcement to search through hours of surveillance video to even get a lead on the vehicle based on only this information. 
 
